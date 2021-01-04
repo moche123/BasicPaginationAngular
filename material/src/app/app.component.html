@@ -1,0 +1,36 @@
+
+
+<div style="text-align: center;">
+    <img
+  width="300"
+  alt="Angular Logo"
+  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d
+  3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KI
+  CAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4yb
+  DE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+C
+  iAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWM
+  jMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0a
+  CAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN
+  2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4M
+  y4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+  />
+  <h1>API CON ÁNGULAR Y PAGINACIÓN</h1>
+</div>
+<main>
+  
+  <mat-paginator [length]="photos.length"
+              [pageSize]="page_size"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="handlePage($event)">
+  </mat-paginator>
+  <div>
+    <mat-card *ngFor="let photo of photos  | paginate: page_size:page_number">
+    
+      <mat-card-title>{{photo.id}}</mat-card-title>
+      <mat-card-subtitle>{{photo.title}}</mat-card-subtitle>
+      <mat-card-content>{{photo.url}}</mat-card-content>
+    </mat-card>
+  </div>
+  
+</main>
+  
